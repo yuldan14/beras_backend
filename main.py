@@ -12,7 +12,7 @@ model_premium_silinda = joblib.load("premium_silinda_arima.joblib")
 model_premium_bapanas = joblib.load("premium_bapanas_arima.joblib")
 
 class PredictRequest(BaseModel):
-    steps_ahead: int  # Prediksi berapa langkah ke depan, misal 1 untuk besok
+    steps_ahead: int
 
 @app.post("/predict/medium_silinda")
 def predict_medium_silinda(req: PredictRequest):
